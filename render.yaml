@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: pixel-valley-server
+    runtime: node
+    rootDir: server
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: ALLOWED_ORIGINS   # your Vercel URL, e.g. https://pixel-valley.vercel.app
+        sync: false
